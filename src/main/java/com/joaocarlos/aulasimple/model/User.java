@@ -2,6 +2,8 @@ package com.joaocarlos.aulasimple.model;
 
 
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -12,6 +14,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
@@ -49,7 +52,13 @@ public class User {
  private String password;
 
 
- //private List<Task> taskx  = new ArrayList<Task>();
+ 
+ @OneToMany(mappedBy = "user")
+ private List<Task> taskx  = new ArrayList<Task>();
+ 
+ 
+ 
+ 
  
  public User() {
 		
@@ -95,6 +104,16 @@ public String getPassword() {
 
 public void setPassword(String password) {
 	this.password = password;
+}
+
+
+public List<Task> getTaskx() {
+	return taskx;
+}
+
+
+public void setTaskx(List<Task> taskx) {
+	this.taskx = taskx;
 }
 
 
