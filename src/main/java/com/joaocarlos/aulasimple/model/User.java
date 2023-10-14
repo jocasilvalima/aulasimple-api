@@ -54,7 +54,7 @@ public class User {
 
  
  @OneToMany(mappedBy = "user")
- private List<Task> taskx  = new ArrayList<Task>();
+ private List<Task> tasks  = new ArrayList<Task>();
  
  
  
@@ -107,13 +107,13 @@ public void setPassword(String password) {
 }
 
 
-public List<Task> getTaskx() {
-	return taskx;
+public List<Task> getTasks() {
+	return tasks;
 }
 
 
-public void setTaskx(List<Task> taskx) {
-	this.taskx = taskx;
+public void setTasks(List<Task> tasks) {
+	this.tasks = tasks;
 }
 
 
